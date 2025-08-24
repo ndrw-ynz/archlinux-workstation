@@ -56,13 +56,6 @@ return {
       desc = 'Command History',
     },
     {
-      '<leader>n',
-      function()
-        Snacks.picker.notifications()
-      end,
-      desc = 'Notification History',
-    },
-    {
       '<leader>e',
       function()
         Snacks.explorer()
@@ -176,13 +169,6 @@ return {
         Snacks.picker.grep_buffers()
       end,
       desc = 'Grep Open Buffers',
-    },
-    {
-      '<leader>sg',
-      function()
-        Snacks.picker.grep()
-      end,
-      desc = 'Grep',
     },
     {
       '<leader>sw',
@@ -448,13 +434,6 @@ return {
       end,
       desc = 'Git Browse',
       mode = { 'n', 'v' },
-    },
-    {
-      '<leader>gg',
-      function()
-        Snacks.lazygit()
-      end,
-      desc = 'Lazygit',
     },
     {
       '<leader>un',

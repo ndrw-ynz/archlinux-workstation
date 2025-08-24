@@ -62,6 +62,7 @@ return {
         { '<leader>g', group = 'Git', icon = '' },
         { '<leader>u', group = 'UI', icon = '💻' },
         { '<leader>f', group = 'Files', icon = '󰮗' },
+        { '<leader>c', group = 'Change', icon = '✍️' },
       },
     }
   end,
