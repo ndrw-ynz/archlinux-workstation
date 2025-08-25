@@ -77,3 +77,5 @@ opt.confirm = true
 opt.tabstop = 2 -- render TABs as 2 spaces
 opt.shiftwidth = 2 -- indent by 2 spaces
 opt.expandtab = true -- convert TABs to spaces
+
+opt.swapfile = false
