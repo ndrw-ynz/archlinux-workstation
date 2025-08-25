@@ -63,6 +63,8 @@ return {
         { '<leader>u', group = 'UI', icon = '💻' },
         { '<leader>f', group = 'Files', icon = '󰮗' },
         { '<leader>c', group = 'Change', icon = '✍️' },
+        { '<leader>n', group = 'Notification History', icon = '󰍩' },
+        { '<leader>d', group = 'Debug', icon = '' },
       },
     }
   end,
