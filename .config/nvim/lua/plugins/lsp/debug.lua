@@ -55,14 +55,14 @@ return {
       desc = 'Debug: Step Out',
     },
     {
-      '<leader>b',
+      '<leader>db',
       function()
         require('dap').toggle_breakpoint()
       end,
       desc = 'Debug: Toggle Breakpoint',
     },
     {
-      '<leader>B',
+      '<leader>dB',
       function()
         require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
       end,
@@ -95,6 +95,7 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
+        'codelldb',
       },
     }
 
@@ -117,6 +118,31 @@ return {
           terminate = '⏹',
           disconnect = '⏏',
         },
+      },
+    }
+
+    -- Setup for C/C++ debugging using codelldb
+    dap.adapters.codelldb = {
+      type = 'server',
+      port = '${port}',
+      executable = {
+        command = vim.fn.stdpath 'data' .. '/mason/bin/codelldb', -- installed by mason
+        args = { '--port', '${port}' },
+      },
+    }
+
+    dap.configurations.cpp = {
+      {
+        name = 'Launch file',
+        type = 'codelldb',
+        request = 'launch',
+        program = function()
+          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        stopOnEntry = false,
+        args = {},
+        runInTerminal = true,
       },
     }
 
