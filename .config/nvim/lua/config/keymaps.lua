@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
 local map = vim.keymap.set
+local custom = require 'config.custom_functions'
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -22,6 +22,9 @@ map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Run current file
+map('n', '<leader>r', custom.RunFile, { desc = 'Run Current File', silent = true })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- map("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
