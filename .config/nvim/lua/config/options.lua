@@ -9,7 +9,7 @@ local opt = vim.opt
 opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- opt.relativenumber = true
+opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 opt.mouse = 'a'
@@ -74,8 +74,8 @@ opt.scrolloff = 10
 opt.confirm = true
 
 -- Consistent identation
-opt.tabstop = 2 -- render TABs as 2 spaces
-opt.shiftwidth = 2 -- indent by 2 spaces
+opt.tabstop = 4 -- render TABs as 2 spaces
+opt.shiftwidth = 4 -- indent by 2 spaces
 opt.expandtab = true -- convert TABs to spaces
 
 opt.swapfile = false
