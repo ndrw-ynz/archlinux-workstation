@@ -336,6 +336,8 @@ require('lazy').setup {
         --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
         local servers = {
           clangd = {},
+          glsl_analyzer = {},
+
           -- gopls = {},
           -- pyright = {},
           -- rust_analyzer = {},
@@ -345,9 +347,56 @@ require('lazy').setup {
           --    https://github.com/pmizio/typescript-tools.nvim
           --
           -- But for many setups, the LSP (`ts_ls`) will work just fine
-          -- ts_ls = {},
-          --
-
+          ts_ls = {
+            filetypes = {
+              'javascript',
+              'javascriptreact',
+              'javascript.jsx',
+              'typescript',
+              'typescriptreact',
+              'typescript.tsx',
+            },
+          },
+          eslint = {
+            filetypes = {
+              'javascript',
+              'javascriptreact',
+              'javascript.jsx',
+              'typescript',
+              'typescriptreact',
+              'typescript.tsx',
+            },
+          },
+          biome = {
+            filetypes = {
+              'javascript',
+              'javascriptreact',
+              'javascript.jsx',
+              'typescript',
+              'typescriptreact',
+              'typescript.tsx',
+            },
+          },
+          cssls = {
+            settings = {
+              css = {
+                validate = true,
+                lint = { unknownAtRules = 'ignore' },
+              },
+              scss = {
+                validate = true,
+                lint = { unknownAtRules = 'ignore' },
+              },
+              less = {
+                validate = true,
+                lint = { unknownAtRules = 'ignore' },
+              },
+            },
+          },
+          tailwindcss = {},
+          html = {},
+          jsonls = {},
+          emmet_ls = {},
           lua_ls = {
             -- cmd = { ... },
             -- filetypes = { ... },
