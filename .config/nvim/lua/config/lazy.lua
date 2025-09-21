@@ -429,6 +429,8 @@ require('lazy').setup {
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
           'stylua', -- Used to format Lua code
+          'prettier',
+          'clang-format',
         })
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -482,6 +484,14 @@ require('lazy').setup {
         formatters_by_ft = {
           lua = { 'stylua' },
           cpp = { 'clang-format' },
+          javascript = { 'biome' },
+          typescript = { 'biome' },
+          javascriptreact = { 'biome' },
+          typescriptreact = { 'biome' },
+          json = { 'biome' },
+          svelte = { 'prettier' },
+          css = { 'biome' },
+          html = { 'prettier' },
           -- Conform can also run multiple formatters sequentially
           -- python = { "isort", "black" },
           --
@@ -528,6 +538,18 @@ require('lazy').setup {
       --- @type blink.cmp.Config
       opts = {
         keymap = {
+          preset = 'none',
+
+          ['<Tab>'] = { 'accept', 'snippet_forward', 'fallback' },
+          ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+
+          ['<CR>'] = { 'fallback' },
+          ['<C-e>'] = { 'hide', 'fallback' },
+
+          ['<C-j>'] = { 'select_next', 'fallback_to_mappings' },
+          ['<C-k>'] = { 'select_prev', 'fallback_to_mappings' },
+
+          ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
           -- 'default' (recommended) for mappings similar to built-in completions
           --   <c-y> to accept ([y]es) the completion.
           --    This will auto-import if your LSP supports it.
@@ -549,7 +571,7 @@ require('lazy').setup {
           -- <c-k>: Toggle signature help
           --
           -- See :h blink-cmp-config-keymap for defining your own keymap
-          preset = 'default',
+          -- preset = 'default',
 
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -632,6 +654,10 @@ require('lazy').setup {
         -- ... and there is more!
         --  Check out: https://github.com/echasnovski/mini.nvim
       end,
+    },
+    {
+      'tpope/vim-eunuch',
+      event = 'VeryLazy',
     },
   },
 
