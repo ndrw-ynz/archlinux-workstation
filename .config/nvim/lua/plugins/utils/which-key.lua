@@ -56,6 +56,7 @@ return {
         },
       },
       wk.add {
+        { '<leader>a', group = 'Auto-Session', icon = '' },
         { '<leader>b', group = 'Buffer', icon = '' },
         { '<leader>s', group = 'Search', icon = '' },
         { '<leader>t', group = 'Toggle', icon = '' },
