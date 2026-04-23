@@ -6,6 +6,7 @@ return {
     shade_terminals = true,
     direction = 'horizontal',
     auto_scroll = true,
+    autochdir = true,
     float_opts = {
       border = 'curved',
     },

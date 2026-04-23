@@ -17,7 +17,7 @@ require('lazy').setup {
     { import = 'plugins.coding' },
     { import = 'plugins.git' },
     { import = 'plugins.lsp' },
-    { import = 'plugins.tools' },
+    --{ import = 'plugins.tools' },
     { import = 'plugins.ui' },
     { import = 'plugins.utils' },
     'NMAC427/guess-indent.nvim',
