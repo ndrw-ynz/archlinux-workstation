@@ -189,6 +189,8 @@ bindsym $mod+r mode "resize"
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+# Picom
+exec_always --no-startup-id picom -b
 
 include ~/.config/i3/appearance.conf
 include ~/.config/i3/keymaps.conf
